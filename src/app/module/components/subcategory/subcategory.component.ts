@@ -19,21 +19,6 @@ export class SubcategoryComponent {
     // this.getSubcategories(this.category_id);
   }
 
-  // async getSubcategories(category_id: string | null) {
-  //   try {
-  //     const response = await this._product.getSubCategories(category_id!);
-  //     // console.log(response?.data, "dataaaaa"); 
-  //     if (response?.data) {
-  //       console.log(response?.data, "response?.data")
-  //       this.product = response?.data.filter((subcategory: product1) =>
-  //         subcategory.category_id == category_id);
-  //       console.log(this.product);
-
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
 
   // getSubcategories(category_id: string | null) {
   //   try {
