@@ -9,7 +9,7 @@ export interface signUp{
 
 export interface login {
     // username: string;
-    email: string;
+    emailAddress: string;
     password: number;
     // passsword2:number;  
     
@@ -29,23 +29,26 @@ export interface product {
     quantity: number;
     image: string,
     _id: string  
-    subcategoryId: string;
+    subCategoryName: string
+    url: string
+    subCategoryId: string;
 }
 
 
 export interface category {
     // id: string;
     category: string;
-    name: string;
-    image: string
+    categoryName: string;
+    url: string
     _id: string
     // subcategories?: subCategory[];
   }
    
  export interface product1 {
-    _id: string;
-    category_id: string;
-    image: string
-    name: string;
+    // _id: string;
+    categoryId: string;
+    url: string
+    subCategoryName: string;
+    _id: string
   }
   

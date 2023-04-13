@@ -10,30 +10,34 @@ import { AddproductsService } from 'src/app/services/addproducts.service';
 })
 export class SubcategoryComponent {
   product: product1[] = [];
-  category_id: any | null;
-
-  constructor(private _route: ActivatedRoute, private _product: AddproductsService) { }
+  categoryId: any | null;
+  subCategoryId: any | null;
 
   ngOnInit(): void {
-    this.category_id = this._route.snapshot.queryParams['category_id'];
-    // this.getSubcategories(this.category_id);
+    this.categoryId = this.route.snapshot.queryParams['categoryId'];
+    this.getSubcategories(this.categoryId);
   }
 
+  constructor(private _route: Router, private _product: AddproductsService, private route: ActivatedRoute) { }
 
-  // getSubcategories(category_id: string | null) {
-  //   try {
-  //     this._product.getSubCategories(category_id!).subscribe(result => {
-  //       if (result?.data) {
-  //         console.log(result?.data, "result?.data")
-  //         this.product = result?.data.filter((subcategory: product1) =>
-  //           subcategory.category_id == category_id);
-  //         console.log(this.product);
 
-  //       }
-  //     })
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
+
+  getSubcategories(subCategoryId: string | null) {
+    try {
+      this._product.getSubCategories(subCategoryId!).subscribe(result => {
+        this.product = result;
+        console.log(this.product);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  onClickProducts(subCategoryId: string) {
+    console.log(subCategoryId);
+    //  console.log(this.getSubcategories(this.categoryId));
+    this.subCategoryId = subCategoryId;
+    this._route.navigate(['/admin/products'], { queryParams: { subCategoryId } });
+  }
 
 }

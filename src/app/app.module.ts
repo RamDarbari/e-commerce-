@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA  } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -20,7 +20,7 @@ import { DashboardComponent } from './module/components/dashboard/dashboard.comp
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SubcategoryComponent } from './module/components/subcategory/subcategory.component';
 // import { ToastrModule } from 'ngx-toastr';
-
+import { ProductComponent } from './module/components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +37,7 @@ import { SubcategoryComponent } from './module/components/subcategory/subcategor
     SidebarComponent,
     DashboardComponent,
     SubcategoryComponent,
+    ProductComponent,
     // ToastrModule
 
   ],
@@ -50,6 +51,10 @@ import { SubcategoryComponent } from './module/components/subcategory/subcategor
     FontAwesomeModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

@@ -19,6 +19,8 @@ export class ProductsComponent implements OnInit{
     this._product.categoriesList().subscribe(result=>{
       if(result){
           this.categoriesList = result;
+          console.log(result);
+          
       }
     })
    }catch(error){
@@ -26,8 +28,8 @@ export class ProductsComponent implements OnInit{
    }
   }
   
-  onClickCategories(category_id: string) {
-    this._route.navigate(['/admin/subcategory'], { queryParams: { category_id } });
+  onClickCategories(categoryId: string) {
+    this._route.navigate(['/admin/subcategory'], { queryParams: { categoryId } });
   }
   
 }

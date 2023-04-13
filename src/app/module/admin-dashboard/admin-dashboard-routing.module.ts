@@ -7,14 +7,16 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 import { HomeComponent } from '../components/home/home.component';
 import { ProductsComponent } from '../components/products/products.component';
 import { SubcategoryComponent } from '../components/subcategory/subcategory.component';
+import { ProductComponent } from '../components/product/product.component';
 // import { AdminDashboardModule } from './admin-dashboard.module';
 
 const routes: Routes = [
   {path: '', component: AdminComponent, children: [
     {path: 'home', component: HomeComponent},
     {path: 'dashboard', component: DashboardComponent},
-    { path: 'product', component:  ProductsComponent },
+    { path: 'category', component:  ProductsComponent },
     {path: 'subcategory', component: SubcategoryComponent},
+    { path:'products', component: ProductComponent },
     { path: 'about-us', component: AboutUsComponent },
     { path: 'contact-us', component: ContactUsComponent },
     {path: '', redirectTo: '/admin/home', pathMatch: 'full'},

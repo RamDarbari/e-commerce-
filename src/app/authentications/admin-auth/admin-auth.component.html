@@ -7,7 +7,7 @@
       <p style="display: flex; justify-content: center; color: red;">{{loginError}}</p>
       <div class="form-group">
         <!-- <label for="email" class="form-label">Email*</label> -->
-        <input type="email" class="form-input" id="email" name="email" ngModel #email="ngModel" required
+        <input type="email" class="form-input" id="email" name="emailAddress" ngModel #email="ngModel" required
           placeholder="Email ">
         <p class="invalid-input"><span *ngIf="email.invalid && email.touched ">Please enter the email</span></p>
       </div>

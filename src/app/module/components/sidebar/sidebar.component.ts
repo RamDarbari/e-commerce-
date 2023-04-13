@@ -11,6 +11,7 @@ export class SidebarComponent {
 
   onLogout(){
     localStorage.removeItem('user')
+    localStorage.removeItem('categoryId')
     this._router.navigate(['/'])
   }
 }

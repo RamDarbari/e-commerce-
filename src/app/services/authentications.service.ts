@@ -36,17 +36,19 @@ export class AuthenticationsService {
   }
 
   userLogin(data: login) {
-    if (!data.email || !data.password) {
+    if (!data.emailAddress || !data.password) {
       alert('Please fill all the required fields')
       return
     }
     try{
       console.log(data);
-      this._http.post<any>('http://10.8.10.81:3000/user/login', data).subscribe(response => {
-        const user = response.data
-        console.log(user);
+      this._http.post<any>('http://10.8.10.59:4000/users/login', data).subscribe(response => {
+        const user = response
+          // console.log(user);
+          // console.log(response);
+        
         if (user) {
-          localStorage.setItem('user', JSON.stringify(response.data));
+          localStorage.setItem('user', JSON.stringify(response));
           console.log('User logged in succesfully')
           this.isuserLoggedIn.next(true);
           this.isLogginFailed.next(false);
